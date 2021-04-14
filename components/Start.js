@@ -34,24 +34,40 @@ export default class Start extends React.Component {
             style={{ flexDirection: 'row', justifyContent: 'space-around' }}
           >
             <TouchableOpacity
+              accessible={true}
+              accessibilityLabel="Dark green background"
+              accessibilityHint="Choose background color"
+              accessibilityRole="button"
               style={styles.circle1}
               onPress={() => {
                 this.setState({ color: '#77b300' });
               }}
             ></TouchableOpacity>
             <TouchableOpacity
+              accessible={true}
+              accessibilityLabel="Lighter green background"
+              accessibilityHint="Choose background color"
+              accessibilityRole="button"
               style={styles.circle2}
               onPress={() => {
                 this.setState({ color: '#99e600' });
               }}
             ></TouchableOpacity>
             <TouchableOpacity
+              accessible={true}
+              accessibilityLabel="Bright green background"
+              accessibilityHint="Choose background color"
+              accessibilityRole="button"
               style={styles.circle3}
               onPress={() => {
                 this.setState({ color: '#b3ff1a' });
               }}
             ></TouchableOpacity>
             <TouchableOpacity
+              accessible={true}
+              accessibilityLabel="Olive green background"
+              accessibilityHint="Choose background color"
+              accessibilityRole="button"
               style={styles.circle4}
               onPress={() => {
                 this.setState({ color: '#B9C6AE' });
@@ -60,6 +76,10 @@ export default class Start extends React.Component {
           </View>
 
           <TouchableOpacity
+            accessible={true}
+            accessibilityLabel="Start Chatting Button"
+            accessibilityHint="Go to chat screen"
+            accessibilityRole="button"
             style={styles.btn}
             title="Start Chatting"
             onPress={() =>
