@@ -1,14 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 // View, Platform to determine the OS currently in use
 // KeyboardAvoidingView when keyboard is out of position (covering txt input filed)
-import { View, Platform, KeyboardAvoidingView } from 'react-native';
+import { View, Platform, KeyboardAvoidingView, LogBox } from 'react-native';
 // first install Gifted Chat npm install react-native-gifted-chat --save then import
-import { GiftedChat, Bubble, InputToolbar } from 'react-native-gifted-chat';
+import {
+  GiftedChat,
+  Bubble,
+  InputToolbar,
+  Day,
+} from 'react-native-gifted-chat';
 import AsyncStorage from '@react-native-community/async-storage';
 import NetInfo from '@react-native-community/netinfo';
+import MapView from 'react-native-maps';
+import CustomActions from './CustomActions';
 
 const firebase = require('firebase');
 require('firebase/firestore');
+
+LogBox.ignoreAllLogs();
 
 export default class Chat extends React.Component {
   constructor() {
@@ -23,6 +32,8 @@ export default class Chat extends React.Component {
         },
         uid: 0,
         isConnected: false,
+        image: null,
+        location: null,
       });
     //////////////////////////////////////////////////////////////////////
     // 🔶 this will allow us to connect app to Firestore
@@ -108,6 +119,11 @@ export default class Chat extends React.Component {
                 avatar: 'https://placeimg.com/140/140/any',
                 createdAt: new Date(),
               },
+              image: this.state.image,
+              location: {
+                longitude: 11.5249684,
+                latitude: 48.0643933,
+              },
               messages: [],
             });
             this.unsubscribe = this.referenceChatMessages
@@ -143,6 +159,8 @@ export default class Chat extends React.Component {
         text: data.text,
         createdAt: data.createdAt.toDate(),
         user: data.user,
+        image: data.image || null,
+        location: data.location || null,
       });
     });
     this.setState({
@@ -156,10 +174,12 @@ export default class Chat extends React.Component {
     const message = this.state.messages[0];
     this.referenceChatMessages.add({
       _id: message._id,
-      uid: this.state.uid,
+      // uid: this.state.uid,
       text: message.text || '',
       createdAt: message.createdAt,
       user: message.user,
+      image: message.image || null,
+      location: message.location || null,
     });
   }
 
@@ -200,6 +220,33 @@ export default class Chat extends React.Component {
     }
   }
 
+  // is responsible for creating the circle button
+  renderCustomActions = (props) => {
+    return <CustomActions {...props} />;
+  };
+
+  renderCustomView(props) {
+    const { currentMessage } = props;
+    if (currentMessage.location) {
+      return (
+        <MapView
+          style={{ width: 150, height: 100, borderRadius: 13, margin: 3 }}
+          region={{
+            latitude: currentMessage.location.latitude,
+            longitude: currentMessage.location.longitude,
+            latitudeDelta: 0.922,
+            longitudeDelta: 0.0421,
+          }}
+        />
+      );
+    }
+    return null;
+  }
+
+  renderDay(props) {
+    return <Day {...props} textStyle={{ color: '#7a49a5' }} />;
+  }
+
   /////////////////////////////////////////////////////////////////////
   render() {
     let color = this.props.route.params.color;
@@ -210,12 +257,14 @@ export default class Chat extends React.Component {
         <GiftedChat
           renderBubble={this.renderBubble.bind(this)}
           renderInputToolbar={this.renderInputToolbar.bind(this)}
+          renderActions={this.renderCustomActions}
+          renderCustomView={this.renderCustomView}
           messages={this.state.messages}
           isConnected={this.state.isConnected}
           showUserAvatar
-          isTyping
           onSend={(messages) => this.onSend(messages)}
           user={this.state.user}
+          renderDay={this.renderDay}
         />
         {Platform.OS === 'android' ? <KeyboardAvoidingView /> : null}
       </View>

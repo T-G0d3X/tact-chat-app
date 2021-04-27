@@ -35,42 +35,42 @@ export default class Start extends React.Component {
           >
             <TouchableOpacity
               accessible={true}
-              accessibilityLabel="Dark green background"
+              accessibilityLabel="Green color"
               accessibilityHint="Choose background color"
               accessibilityRole="button"
               style={styles.circle1}
               onPress={() => {
-                this.setState({ color: '#77b300' });
+                this.setState({ color: '#B9C6AE' });
               }}
             ></TouchableOpacity>
             <TouchableOpacity
               accessible={true}
-              accessibilityLabel="Lighter green background"
+              accessibilityLabel="Blue color"
               accessibilityHint="Choose background color"
               accessibilityRole="button"
               style={styles.circle2}
               onPress={() => {
-                this.setState({ color: '#99e600' });
+                this.setState({ color: '#AEB9C6' });
               }}
             ></TouchableOpacity>
             <TouchableOpacity
               accessible={true}
-              accessibilityLabel="Bright green background"
+              accessibilityLabel="Rose color"
               accessibilityHint="Choose background color"
               accessibilityRole="button"
               style={styles.circle3}
               onPress={() => {
-                this.setState({ color: '#b3ff1a' });
+                this.setState({ color: '#C6AEB9' });
               }}
             ></TouchableOpacity>
             <TouchableOpacity
               accessible={true}
-              accessibilityLabel="Olive green background"
+              accessibilityLabel="Grey color"
               accessibilityHint="Choose background color"
               accessibilityRole="button"
               style={styles.circle4}
               onPress={() => {
-                this.setState({ color: '#B9C6AE' });
+                this.setState({ color: '#AEAEAE' });
               }}
             ></TouchableOpacity>
           </View>
@@ -144,28 +144,28 @@ const styles = StyleSheet.create({
     paddingLeft: '5%',
   },
   circle1: {
-    backgroundColor: '#77b300',
+    backgroundColor: '#B9C6AE',
     width: 40,
     height: 40,
     borderRadius: 25,
     margin: '5%',
   },
   circle2: {
-    backgroundColor: '#99e600',
+    backgroundColor: '#AEB9C6',
     width: 40,
     height: 40,
     borderRadius: 25,
     margin: '5%',
   },
   circle3: {
-    backgroundColor: '#b3ff1a',
+    backgroundColor: '#C6AEB9',
     width: 40,
     height: 40,
     borderRadius: 25,
     margin: '5%',
   },
   circle4: {
-    backgroundColor: '#B9C6AE',
+    backgroundColor: '#AEAEAE',
     width: 40,
     height: 40,
     borderRadius: 25,
