@@ -1,6 +1,6 @@
 # tact-chat-app
-![startScreen](https://github.com/T-G0d3X/tact-chat-app/blob/main/assets/startScreen.jpeg)
-![chatScreen](https://github.com/T-G0d3X/tact-chat-app/blob/main/assets/chatScreen.jpeg)
+<img src="https://github.com/T-G0d3X/tact-chat-app/blob/main/assets/startScreen.jpeg" width="200" height="200" />
+<img src="https://github.com/T-G0d3X/tact-chat-app/blob/main/assets/chatScreen.jpeg"  width="200" height="200" />
 
 ## *Description*
 
