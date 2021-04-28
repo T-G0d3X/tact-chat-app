@@ -28,10 +28,8 @@ The app allows users to pick and send images from their phone's image library. W
 npm install expo-cli --global
 ```
 
- 1.   **To run the app on your mobile device**, install the Expo app through your app store:
+ 1.   **To run the app on your mobile device**, install the Expo app through your app store.
     
-       [iOS](https://apps.apple.com/app/apple-store/id982107779)
-       [Android](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=www)
     
  2. You also need and Expo account which can be created via 
     [Expo.io](https://expo.io/)
