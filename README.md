@@ -1,6 +1,8 @@
+
+
+
 # tact-chat-app
-| <img src="https://github.com/T-G0d3X/tact-chat-app/blob/main/assets/startScreen.jpeg" width="200" height="400" /> |
-| <img src="https://github.com/T-G0d3X/tact-chat-app/blob/main/assets/chatScreen.jpeg"  width="200" height="400" /> |
+   https://user-images.githubusercontent.com/69514083/116515511-ae89e700-a8cc-11eb-8638-2e34791bcc1b.mp4
 
 ## *Description*
 
