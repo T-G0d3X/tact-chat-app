@@ -2,7 +2,8 @@
 
 
 # tact-chat-app
-   https://user-images.githubusercontent.com/69514083/116515511-ae89e700-a8cc-11eb-8638-2e34791bcc1b.mp4
+  https://user-images.githubusercontent.com/69514083/116515822-150f0500-a8cd-11eb-946d-390d95ab7729.mp4
+
 
 ## *Description*
 
